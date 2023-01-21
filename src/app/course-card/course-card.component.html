@@ -1,6 +1,6 @@
 <div class="course-card " *ngIf="course"
         [ngClass]="cardClasses()"><!-- A guard against an undefined courseCard -->
-    <div class="course-title">
+    <div class="course-title" >
         {{ cardIndex+'. '+ course.description }}
         <!-- cardIndex adds the 1. to the title -->
     </div>
@@ -16,6 +16,15 @@
     <div class="course-description">
         {{ course.longDescription }}
     </div>
+
+    <div class="course-category" [ngSwitch]="course.category" >
+        <div class="category" *ngSwitchCase="'BEGINNER'">Beginner</div>
+        <div class="category" *ngSwitchCase="'INTERMEDIATE'">Intermediate</div>
+        <div class="category" *ngSwitchCase="'ADVANCED'">Advanced</div>
+        <div class="category" *ngSwitchDefault>All Levels</div>
+
+    </div>
+
     <button (click)="onCourseViewed()">View Course</button>
 </div>
 
