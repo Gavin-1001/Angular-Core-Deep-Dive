@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {COURSES} from "../db-data";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularCoreDeepDive';
+    title = 'angularCoreDeepDive';
+    coreCourse = COURSES[0];
+    rxjsCourse = COURSES[1];
+    ngrxCourse = COURSES[2];
 }
