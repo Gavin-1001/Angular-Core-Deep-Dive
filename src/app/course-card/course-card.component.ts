@@ -25,4 +25,9 @@ export class CourseCardComponent {
         this.courseSelected.emit(this.course); //this emits a custom event when the button on each card is selected
         //prints out the course[0] payload from the custom event
     }
+
+    isImageVisible() {
+       return this.course && this.course.iconUrl; // return a boolean true/false if the image is visible if the course
+                                                  // property is defined and if the course property icon is also defined
+    }
 }
