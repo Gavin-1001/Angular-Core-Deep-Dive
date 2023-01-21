@@ -14,6 +14,9 @@ export class CourseCardComponent {
     @Input()
     course:Course; //inputs the whole courseModel to access properties instead of just a single property like title
 
+    @Input()
+    cardIndex:number; //adds number to the title of the card
+
     @Output()
     courseSelected = new EventEmitter<Course>();
 

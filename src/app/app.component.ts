@@ -9,9 +9,10 @@ import {Course} from "./model/course";
 })
 export class AppComponent {
     title = 'angularCoreDeepDive';
-    coreCourse = COURSES[0];
-    rxjsCourse = COURSES[1];
-    ngrxCourse = COURSES[2];
+
+    courses = COURSES; //can access the complete list of courses
+
+
 
     onCourseSelected(course:Course) {
         console.log("App component - click event bubbled... ", course);
