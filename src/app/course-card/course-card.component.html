@@ -1,4 +1,5 @@
-<div class="course-card" *ngIf="course"><!-- A guard against an undefined courseCard -->
+<div class="course-card " *ngIf="course"
+        [ngClass]="cardClasses()"><!-- A guard against an undefined courseCard -->
     <div class="course-title">
         {{ cardIndex+'. '+ course.description }}
         <!-- cardIndex adds the 1. to the title -->

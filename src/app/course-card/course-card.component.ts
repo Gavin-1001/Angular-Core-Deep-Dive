@@ -12,10 +12,10 @@ export class CourseCardComponent {
     //title: string; //allowed to access the title of the course. See app.html
 
     @Input()
-    course:Course; //inputs the whole courseModel to access properties instead of just a single property like title
+    course: Course; //inputs the whole courseModel to access properties instead of just a single property like title
 
     @Input()
-    cardIndex:number; //adds number to the title of the card
+    cardIndex: number; //adds number to the title of the card
 
     @Output()
     courseSelected = new EventEmitter<Course>();
@@ -27,7 +27,15 @@ export class CourseCardComponent {
     }
 
     isImageVisible() {
-       return this.course && this.course.iconUrl; // return a boolean true/false if the image is visible if the course
-                                                  // property is defined and if the course property icon is also defined
+        return this.course && this.course.iconUrl; // return a boolean true/false if the image is visible if the course
+                                                   // property is defined and if the course property icon is also defined
+    }
+
+    cardClasses() {
+        if(this.course.category == 'BEGINNER'){
+            return 'beginner';
+            //if the courseCategory is a BEGINNER course then style the card with a lightSalmon colour
+        }
+        return;
     }
 }
