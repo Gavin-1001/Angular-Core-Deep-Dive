@@ -5,13 +5,10 @@
         <!-- cardIndex adds the 1. to the title -->
     </div>
 
-    <img width="200" alt="Angular Logo" *ngIf="isImageVisible();else noImage"
-         [src]=course.iconUrl>
+    <ng-content select=".course-image"></ng-content> <!-- Removes the image, image code is in app.component and ng-content displays the image here -->
 
-    <ng-template #noImage>
-        <!-- REMOVE THE IMAGE URL in database.ts for this to work-->
-        <p>No image available</p>
-    </ng-template>
+    <ng-content select=".course-description"></ng-content>
+
 
     <div class="course-description">
         {{ course.longDescription }}

@@ -4,11 +4,22 @@
          src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
 </div>
 
-
-<div class="courses">
+<div class="courses" *ngIf="courses[0] as course">
 
     <app-course-card
         (courseSelected)="onCourseSelected($event)"
-        [course]="course[0]"
-    ></app-course-card>
+        [course]="course">
+
+        <div class="course-image">
+            <img  width="300" alt="Angular Logo" [src]="course.iconUrl">
+            <h5>Total Lessons: 5</h5>
+        </div>
+    </app-course-card>
+
+    <app-course-card
+        (courseSelected)="onCourseSelected($event)"
+        [course]="courses[1]">
+
+        <h5>Total Lessons: 15</h5>
+    </app-course-card>
 </div>
